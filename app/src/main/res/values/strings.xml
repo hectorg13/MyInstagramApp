@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MyInstagramApp</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_upload">Upload</string>
+    <string name="title_reels">Reels</string>
+    <string name="title_profile">Profile</string>
+    <string name="hello_blank_fragment">Hello</string>
+</resources>
