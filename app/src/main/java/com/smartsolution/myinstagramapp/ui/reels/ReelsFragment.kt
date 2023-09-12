@@ -13,9 +13,6 @@ import com.smartsolution.myinstagramapp.ui.profile.ProfileViewModel
 class ReelsFragment : Fragment() {
 
     private var _binding: FragmentReelsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,17 +20,10 @@ class ReelsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
+        val reelsViewModel = ViewModelProvider(this)[ReelsViewModel::class.java]
 
         _binding = FragmentReelsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

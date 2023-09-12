@@ -1,10 +1,21 @@
 <resources>
-    <string name="app_name">MyInstagramApp</string>
-
+    <string name="app_name">MyInstaApp</string>
+    <!-- Menus -->
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_upload">Upload</string>
     <string name="title_reels">Reels</string>
     <string name="title_profile">Profile</string>
     <string name="hello_blank_fragment">Hello</string>
+
+    <!-- Profile Menu-->
+    <string name="profile_post_text">Post</string>
+    <string name="profile_post_num">15</string>
+    <string name="profile_followers_text">Followers</string>
+    <string name="profile_followers_num">532</string>
+    <string name="profile_following_text">Following</string>
+    <string name="profile_following_num">120</string>
+    <string name="profile_title">Hector Mobile Developer</string>
+    <string name="profile_description">"Apasionado por la creación de experiencias móviles innovadoras 📱💡 | Explorador del mundo del código y el diseño 🌟 | En busca de nuevos desafíos y oportunidades para colaborar 🌐 </string>
+
 </resources>

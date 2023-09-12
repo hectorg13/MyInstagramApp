@@ -26,13 +26,8 @@ class UploadFragment : Fragment() {
             ViewModelProvider(this).get(UploadViewModel::class.java)
 
         _binding = FragmentUploadBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        uploadViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onDestroyView() {

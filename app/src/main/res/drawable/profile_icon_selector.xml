@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado predeterminado (sin selección) -->
+    <item android:drawable="@drawable/img_circle_8" />
+
+    <!-- Estado presionado (selección) -->
+    <item android:drawable="@drawable/img_circle_8" android:state_checked="true" />
+</selector>

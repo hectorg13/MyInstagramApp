@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.smartsolution.myinstagramapp.data.PostsProvider
 import com.smartsolution.myinstagramapp.databinding.FragmentProfileBinding
-import com.smartsolution.myinstagramapp.ui.home.HomeViewModel
+import com.smartsolution.myinstagramapp.ui.profile.adapter.ProfileAdapter
+import com.smartsolution.myinstagramapp.ui.profile.adapter.StoryAdapter
 
 class ProfileFragment : Fragment() {
 
@@ -20,17 +22,26 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupRecyclerGrid()
+        setupRecyclerStory()
+    }
+
+    private fun setupRecyclerGrid() {
+        binding.rvProfileGrid.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.rvProfileGrid.adapter = ProfileAdapter(PostsProvider.postLists)
+    }
+
+    private fun setupRecyclerStory() {
+        binding.rvHighlight.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvHighlight.adapter = StoryAdapter(PostsProvider.storiesLists)
     }
 
     override fun onDestroyView() {
